@@ -1718,7 +1718,7 @@ later(function()
   vim.keymap.set('n', 'gR', "<Cmd>Pick lsp scope='references'<cr>")
   vim.keymap.set('n', 'gD', "<Cmd>Pick lsp scope='definition'<cr>")
   vim.keymap.set('n', 'gI', "<Cmd>Pick lsp scope='declaration'<cr>")
-  vim.keymap.set('n', 'gA', "<Cmd>Pick lsp scope='document_symbol'<cr>")
+  vim.keymap.set('n', 'gS', "<Cmd>Pick lsp scope='document_symbol'<cr>")
   -- Brackted: ===================================================================================
   vim.keymap.set('n', '[a', '<cmd>previous<cr>')
   vim.keymap.set('n', ']a', '<cmd>next<cr>')
