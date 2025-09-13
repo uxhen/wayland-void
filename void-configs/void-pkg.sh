@@ -30,10 +30,10 @@ sudo xbps-install -Sy \
     qt5ct qt6ct qt5-wayland qt6-wayland kvantum  \
     # SOUND:
     pipewire wireplumber alsa-pipewire alsa-utils pamixer pavucontrol \
-    # BLUETOOTH: 
+    # BLUETOOTH:
     bluez bluez-alsa libspa-bluetooth blueman \
     # PROGRAMMING:
-    nodejs lua-language-server  \
+    nodejs lua-language-server \
     # FONTS:
     noto-fonts-ttf noto-fonts-ttf-extra noto-fonts-emoji noto-fonts-cjk \
     font-awesome dejavu-fonts-ttf \
