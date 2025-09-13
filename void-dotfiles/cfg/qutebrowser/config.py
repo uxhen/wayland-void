@@ -85,7 +85,7 @@ c.downloads.prevent_mixed_content = True
 c.downloads.location.prompt = False
 c.downloads.location.remember = False
 c.downloads.remove_finished = 5000
-c.downloads.location.directory = "/home/lli/downloads"
+c.downloads.location.directory = "/home/lli/Downloads"
 c.downloads.location.suggestion = "both"
 c.downloads.position = 'bottom'
 c.downloads.open_dispatcher = None
@@ -221,8 +221,8 @@ c.content.user_stylesheets = []
 c.content.blocking.enabled = True
 c.content.blocking.hosts.block_subdomains = True
 c.content.blocking.method = "both"
+c.content.blocking.hosts.lists = []
 c.content.blocking.whitelist = ['https://*.split.io/*']
-c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
 c.content.blocking.adblock.lists = [
     "https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt",
     "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt",
@@ -465,9 +465,9 @@ c.qt.args = [
 #               ╚═════════════════════════════════════════════════════════╝
 c.url.open_base_url = True
 c.url.auto_search = 'naive'
-c.url.default_page = "/home/lli/qutebrowser/startpage/index.html"
-c.url.start_pages = [ "/home/lli/qutebrowser/startpage/index.html" ]
-c.url.yank_ignored_parameters += ["smid", "smtyp", "fbclid", "fb_news_token"]
+c.url.default_page = '/home/lli/.config/qutebrowser/startpage/index.html'
+c.url.start_pages = [ '/home/lli/.config/qutebrowser/startpage/index.html' ]
+c.url.yank_ignored_parameters += ['smid', 'smtyp', 'fbclid', 'fb_news_token']
 c.url.incdec_segments = ['path', 'query']
 c.url.searchengines = {
     # search engines ==================================================================
