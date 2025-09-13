@@ -6,6 +6,14 @@
 alias ls = eza --long --group --icons=auto --git --sort=name --group-directories-first
 alias ll = eza --long --group --icons=auto --git --sort=name --group-directories-first
 alias lt = eza --long --group --icons=auto --git --only-dirs --tree --level=3 --sort=modified
+# Bat Like Cat:                                                                   #
+# =============================================================================== #
+alias b = bat
+alias bn = bat --number
+alias bnl = bat --number --line-range
+alias bp = bat --plain
+alias bpl = bat --plain --line-range
+alias bl = bat --line-range
 # Changing Directory:                                                             #
 # =============================================================================== #
 alias cd.. = cd ..
@@ -38,6 +46,12 @@ alias gc = g commit -m
 alias gd = g diff
 alias gl = g log --oneline --graph --all -10
 alias gp = g push -uf origin main
+alias gr = git remote
+alias grh = git reset
+alias grhh = git reset --hard
+alias grss = git restore --source
+alias grst = git restore --staged
+alias grm = git rm
 alias lg = lazygit
 # Void Package Manager:                                                           #
 # =============================================================================== #
@@ -60,11 +74,11 @@ alias bun-dev = bun --bun run dev
 # =============================================================================== #
 alias npm = pnpm
 alias npx = pnpm dlx
-# For Configs Files:                                                              #
+## For Configs Files:                                                             #
 # =============================================================================== #
 alias dots = cd ~/.local/wayland-void
-alias bashc = nvim ~/.bashrc
 alias wmc = nvim ~/.config/river/init
+alias bashc = nvim ~/.bashrc
 # Others Usfeual Alias:                                                           #
 # =============================================================================== #
 alias yt-concats = yt-dlp --no-warnings --quiet --progress --ignore-config --downloader aria2c --output "~/Videos/PROGRAMMING/%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" --format "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio" --concat-playlist always -S "codec:h264"

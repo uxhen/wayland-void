@@ -1,3 +1,6 @@
+"""         ╔═════════════════════════════════════════════════════════╗
+"""         ║  Extend syntax to include additional ejs files          ║
+"""         ╚═════════════════════════════════════════════════════════╝
 runtime! syntax/html.vim
 unlet b:current_syntax
 

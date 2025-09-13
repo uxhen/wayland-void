@@ -1,0 +1,39 @@
+/*                 ╔═════════════════════════════════════════════════════════╗                         */
+/*                 ║                    Youtube Styles                       ║                         */
+/*                 ╚═════════════════════════════════════════════════════════╝                         */
+/* remove gradient in player ========================================================================= */
+.ytp-gradient-bottom {
+  display: none !important;
+}
+/* list view ========================================================================================== */
+ytd-item-section-renderer:not(:has(ytd-grid-renderer)):has(
+    ytd-thumbnail-overlay-time-status-renderer[overlay-style="SHORTS"]
+  ) {
+  display: none;
+}
+/* grid view ========================================================================================== */
+#items.ytd-grid-renderer
+  > ytd-grid-video-renderer:has(
+    ytd-thumbnail-overlay-time-status-renderer[overlay-style="SHORTS"]
+  ) {
+  display: none;
+}
+/* hide yt sidebar =================================================================================== */
+ytd-mini-guide-renderer,
+ytd-guide-renderer {
+  display: none !important;
+}
+/* remove extra padding ============================================================================== */
+.ytd-app {
+  margin-left: 0 !important;
+}
+/* reshape some elements ============================================================================= */
+.chip-container {
+  border-radius: 0% !important;
+}
+.ytd-thumbnail {
+  border-radius: 10% !important;
+}
+.yt-spec-avatar-shape__image {
+  border-radius: 10% !important;
+}

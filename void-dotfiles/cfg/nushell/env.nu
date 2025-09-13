@@ -18,6 +18,8 @@ export-env { load-env {
     XDG_VIDEOS_DIR: ($env.HOME | path join "Videos")
 }}
 export-env { load-env {
+    BAT_CONFIG_DIR : ($env.XDG_CONFIG_DIR | path join "bat")
+    BAT_CONFIG_PATH : ($env.XDG_CONFIG_DIR | path join "bat" "config")
     RIPGREP_CONFIG_PATH : ($env.XDG_CONFIG_DIR | path join "ripgrep" "rc")
     BUN_INSTALL_CACHE_DIR: ($env.XDG_CACHE_HOME | path join "bun" "install" "cache")
 }}
@@ -27,13 +29,13 @@ export-env { load-env {
 $env.FZF_DEFAULT_OPTS = "
     --prompt='󱓇  ' --layout=reverse
     --preview-window=right,30%
-    --style=minimal --height=30% --border --preview-window right,40%
-    --color fg:#b3b9b8,bg:#141b1e
-    --color bg+:#1e2527,fg+:#dadada
-    --color hl:#8ccf7e,hl+:#8ccf7e,gutter:#141b1e
-    --color pointer:#373d49,info:#606672
-    --color border:#141b1e
-    --color border:#8ccf7e
+    --style=minimal --height=100% --border --preview-window right,40%
+    --color fg:#a6a69c,bg:#181616
+    --color bg+:#201d1d,fg+:#c5c9c5
+    --color hl:#8a9a7b,hl+:#8a9a7b,gutter:#181616
+    --color pointer:#201d1d,info:#393836
+    --color border:#181616
+    --color border:#8a9a7b
     --bind 'tab:accept'
 "
 # =============================================================================== #

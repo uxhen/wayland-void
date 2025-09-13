@@ -1,0 +1,29 @@
+# =============================================================================== #
+# Tldr As Man But More Cool:                                                      #
+# =============================================================================== #
+[display]
+use_pager = false
+
+[style.description]
+foreground = { rgb = { r = 197, g = 201, b = 197} }
+underline = true
+bold = true
+
+[style.command_name]
+foreground = { rgb = { r = 197, g = 201, b = 197 } }
+
+[style.example_text]
+foreground = { rgb = { r = 13, g = 12, b = 12 } }
+background = { rgb = { r = 138, g = 154, b = 123 } }
+bold = true
+
+[style.example_code]
+foreground = { rgb = { r = 197, g = 201, b = 197 } }
+
+[style.example_variable]
+foreground = "green"
+underline = true
+
+[updates]
+auto_update = true
+auto_update_interval_hours = 24

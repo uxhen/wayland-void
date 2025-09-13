@@ -25,6 +25,63 @@
     ],
     "description": "Creates a basic React functional component"
   },
+  "reactFunctionMemoComponent": {
+    "prefix": "rmc",
+    "body": [
+      "import { memo } from 'react'",
+      "",
+      "export default memo(function ${1:${TM_FILENAME_BASE}}() {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t$0",
+      "\t\t</div>",
+      "\t)",
+      "})"
+    ],
+    "description": "Creates a React Memo Function Component"
+  },
+  "useSelector": {
+    "prefix": "useSelector",
+    "body": ["const ${1:state} = useSelector(state => state.${1:state})"]
+  },
+  "useDispatch": {
+    "prefix": "useDispatch",
+    "body": ["const dispatch = useDispatch()"]
+  },
+  "jsx element": {
+    "prefix": "j",
+    "body": "<${1}>\n\t$0\n</${1}>",
+    "description": "an element"
+  },
+  "jsx element self closed": {
+    "prefix": "jc",
+    "body": "<${0:elementName} />",
+    "description": "an element self closed"
+  },
+  "jsx return element": {
+    "prefix": "jr",
+    "body": ["return (", "  <>", "    ${0}", "  </>", ")"],
+    "description": "return an element"
+  },
+  "jsx elements map": {
+    "prefix": "jm",
+    "body": "{${1:array}.map((item) => <${2:elementName} key={item.id}>\n\t$0\n</${2}>)}",
+    "description": "an element self closed"
+  },
+  "jsx elements map with return": {
+    "prefix": "jmr",
+    "body": "{${1:array}.map((item) => {\n\treturn <${2:elementName} key={item.id}>\n\t$0\n</${2}>\n})}",
+    "description": "an element self closed"
+  },
+  "reactCustomHook": {
+    "prefix": "rch",
+    "body": [
+      "export const ${1:${TM_FILENAME_BASE}} = (${2}) => {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Creates a React Custom Hook with ES7 module system"
+  },
   "Create useState hook": {
     "prefix": ["uss", "ust"],
     "body": [

@@ -1,33 +1,46 @@
 --          ╔═════════════════════════════════════════════════════════╗
 --          ║                       Smart Enter                       ║
 --          ╚═════════════════════════════════════════════════════════╝
+-- Pre-resolved termcodes for efficiency: ========================================================
 local cr_default = vim.api.nvim_replace_termcodes('<CR>', true, true, true)
 local esc_O = vim.api.nvim_replace_termcodes('<CR><Esc>O', true, true, true)
 local ctrl_y = vim.api.nvim_replace_termcodes('<C-y>', true, true, true)
 
+-- Cache the mini.pairs.cr function (no need to require every time):==============================
+local mini_pairs_cr
+pcall(function()
+  mini_pairs_cr = require('mini.pairs').cr
+end)
+
+-- Smart Enter function: =========================================================================
 local function smart_enter()
-  local col = vim.fn.col('.')
+  -- Fast path: Handle completion menu selection first (avoid unnecessary work)
+  if vim.fn.pumvisible() == 1 then
+    local selected = vim.fn.complete_info({ 'selected' }).selected
+    if selected ~= -1 then
+      return ctrl_y
+    end
+  end
+
+  -- Only get line and column if needed
+  local col = vim.api.nvim_win_get_cursor(0)[2] + 1 -- col() is 1-based
   local line = vim.api.nvim_get_current_line()
-  -- tag check using byte comparison: ====================================================================
-  if col > 1 and col <= #line then
+  local line_len = #line
+
+  -- Check for '><' pattern
+  if col > 1 and col <= line_len then
     local prev_byte = line:byte(col - 1)
     local next_byte = line:byte(col)
     if prev_byte == 62 and next_byte == 60 then
       return esc_O
     end
   end
-  -- Handle completion selection: =======================================================================
-  if vim.fn.pumvisible() == 1 then
-    local complete_info = vim.fn.complete_info()
-    if complete_info.selected ~= -1 then
-      return ctrl_y
-    end
-  end
-  -- Fallback to mini.pairs with safe require: ==========================================================
-  local ok = pcall(require, 'mini.pairs')
-  return ok and require('mini.pairs').cr() or cr_default
+
+  -- Fallback to mini.pairs or default <CR>
+  return mini_pairs_cr and mini_pairs_cr() or cr_default
 end
--- Register filetypes in a set for O(1) lookups: ========================================================
+
+-- Fast filetype lookup table: ===================================================================
 local filetypes = {
   html = true,
   xml = true,
@@ -38,16 +51,19 @@ local filetypes = {
   vue = true,
   svelte = true,
 }
+
+-- Autocmd to set up smart enter mapping per relevant filetype: ==================================
 vim.api.nvim_create_autocmd('FileType', {
   callback = function(args)
-    if filetypes[vim.bo[args.buf].filetype] then
+    local ft = vim.bo[args.buf].filetype
+    if filetypes[ft] then
       vim.keymap.set('i', '<CR>', smart_enter, {
         noremap = true,
         silent = true,
         buffer = args.buf,
         expr = true,
-        desc = "Smart Enter",
+        desc = 'Smart Enter',
       })
     end
-  end
+  end,
 })

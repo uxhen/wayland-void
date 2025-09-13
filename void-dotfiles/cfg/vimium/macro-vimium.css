@@ -1,0 +1,197 @@
+/* # =============================================================================== # */
+/* # Macro Vimium Theme                                                              # */
+/* # =============================================================================== # */
+:root {
+  --font-family: "JetBrainsMono Nerd Font";
+  /* Base & surfaces (Sumi Ink) */
+  --vimium-base: #181616;
+  --vimium-secondry: #201d1d;
+  --vimium-crust: #1f1f28;
+  --vimium-surface0: #2a2a37;
+  --vimium-surface1: #363646;
+  --vimium-surface2: #54546d;
+
+  /* Text */
+  --vimium-text: #c8c093;
+  --vimium-subtext0: #54546d;
+  --vimium-subtext1: #767676;
+
+  /* Accent colors (Macro) */
+  --vimium-green: #8a9a7b;
+  --vimium-blue: #7fb4ca;
+  --vimium-rosewater: #c4746e;
+  --vimium-peach: #c38a94;
+  --vimium-lavender: #8992a7;
+  --vimium-yellow: #c0a36e;
+}
+
+/* -----------------------------------------------------------
+   🌐 Link Hints
+*/
+#vimium-hint-marker-container div.vimiumHintMarker {
+  font-family: var(--font-family);
+  background: var(--vimium-yellow);
+  border: 1px solid var(--vimium-crust);
+}
+#vimium-hint-marker-container div.vimiumHintMarker span {
+  color: var(--vimium-base);
+  font-weight: bold;
+}
+#vimium-hint-marker-container div.internal-vimium-hint-marker,
+#vimium-hint-marker-container div.vimiumHintMarker {
+  padding: 3px 4px;
+  background: var(--vimium-green);
+  border: 1;
+  border-color: var(--vimium-mantle);
+  box-shadow: none;
+}
+#vimium-hint-marker-container div span {
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--vimium-mantle);
+  text-shadow: none;
+}
+#vimium-hint-marker-container div.vimiumHintMarker span.matchingCharacter {
+  color: var(--vimium-subtext0);
+}
+
+/* -----------------------------------------------------------
+   🔍 Vomnibar
+*/
+#vomnibar {
+  font-family: var(--font-family);
+  background: var(--vimium-base);
+  border: 1px solid var(--vimium-secondry);
+  animation: show 200ms ease-out forwards;
+}
+
+@keyframes show {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+#vomnibar input,
+#vomnibar #vomnibar-search-area {
+  font-family: var(--font-family);
+  background: var(--vimium-base);
+  color: var(--vimium-green);
+  border: none;
+  box-shadow: none;
+}
+
+#vomnibar ul {
+  background: var(--vimium-base);
+  border-top: 1px solid var(--vimium-surface0);
+}
+
+#vomnibar li {
+  background: var(--vimium-base);
+  color: var(--vimium-text);
+  border-bottom: 1px solid var(--vimium-surface0);
+}
+#vomnibar li.selected {
+  background: var(--vimium-secondry);
+}
+
+/* Item text styles */
+#vomnibar li .source {
+  color: var(--vimium-peach);
+}
+#vomnibar li .title {
+  color: var(--vimium-blue);
+  font-weight: bold;
+}
+#vomnibar li .url {
+  color: var(--vimium-rosewater);
+}
+#vomnibar li .match {
+  color: var(--vimium-green);
+  font-weight: bold;
+}
+#vomnibar li .title .match {
+  color: var(--vimium-blue);
+}
+
+/* History entries override */
+#vomnibar li.omnibar-history-item {
+  background: var(--vimium-surface1) !important;
+}
+#vomnibar li.omnibar-history-item.selected {
+  background: var(--vimium-surface2) !important;
+}
+
+/* -----------------------------------------------------------
+   🔎 Search/Find HUD
+*/
+div#hud-container {
+  background: var(--vimium-base);
+  border: 1px solid var(--vimium-text);
+  box-shadow: none;
+}
+div#hud-container span#hud-find-input,
+div#hud-container div#hud {
+  color: var(--vimium-text);
+  background: var(--vimium-crust);
+}
+
+/* -----------------------------------------------------------
+   Vimium Options & Help UI
+*/
+body.vimium-body,
+body.vimium-body header,
+body.vimium-body label {
+  background: var(--vimium-base);
+  color: var(--vimium-text);
+}
+
+body.vimium-body button,
+body.vimium-body input,
+body.vimium-body textarea,
+body.vimium-body footer {
+  background: var(--vimium-crust);
+  color: var(--vimium-text);
+  border-color: var(--vimium-surface1);
+  scrollbar-color: var(--vimium-surface2) var(--vimium-surface0);
+}
+
+body.vimium-body button:focus,
+body.vimium-body input:focus,
+body.vimium-body textarea:focus {
+  border-color: var(--vimium-blue);
+}
+body.vimium-body a {
+  color: var(--vimium-blue);
+}
+body.vimium-body #wrapper .example {
+  color: var(--vimium-subtext1);
+}
+
+/* Help dialog */
+#dialog {
+  background: var(--vimium-crust);
+  color: var(--vimium-text);
+  border: 1px solid var(--vimium-surface1);
+}
+#dialog .divider {
+  background: var(--vimium-surface1);
+}
+#dialog a,
+#dialog span.vim {
+  color: var(--vimium-blue);
+}
+#dialog a#close:hover {
+  color: var(--vimium-rosewater);
+}
+#dialog .key,
+body.vimium-body .key {
+  background: var(--vimium-crust);
+  color: var(--vimium-text);
+  border: 1px solid var(--vimium-surface1);
+  box-shadow: 0 2px 0 var(--vimium-surface0);
+}

@@ -2,10 +2,61 @@
 # Nushell Config Shell:                                                           #
 # =============================================================================== #
 # =============================================================================== #
-# Source OF File:                                                                 #
+# Macro theme:                                                                    #
 # =============================================================================== #
-source alias.nu
-source colors.nu
+let base00 = "#181616"
+let base01 = "#201d1d"
+let base02 = "#2D4F67"
+let base03 = "#585858"
+let base04 = "#C8C093"
+let base05 = "#C8C093"
+let base06 = "#e8e8e8"
+let base07 = "#f8f8f8"
+let base08 = "#c4746e"
+let base09 = "#E46876"
+let base0a = "#87a987"
+let base0b = "#E6C384"
+let base0c = "#7FB4CA"
+let base0d = "#938AA9"
+let base0e = "#7AA89F"
+let base0f = "#c5c9c5"
+# we're creating a theme here that uses the colors we defined above.
+let base16_theme = {
+    separator: $base03
+    leading_trailing_space_bg: $base04
+    header: $base0b
+    date: $base0e
+    filesize: $base0d
+    row_index: $base0c
+    bool: $base08
+    int: $base0b
+    duration: $base08
+    range: $base08
+    float: $base08
+    string: $base04
+    nothing: $base08
+    binary: $base08
+    cellpath: $base08
+    hints: dark_gray
+
+    shape_garbage: { fg: "#FFFFFF" bg: "#FF0000" attr: b }
+    shape_bool: $base0d
+    shape_int: { fg: $base0e attr: b }
+    shape_float: { fg: $base0e attr: b }
+    shape_range: { fg: $base0a attr: b }
+    shape_internalcall: { fg: $base0c attr: b }
+    shape_external: $base0c
+    shape_externalarg: { fg: $base0b attr: b }
+    shape_literal: $base0d
+    shape_operator: $base0a
+    shape_signature: { fg: $base0b attr: b }
+    shape_string: $base0b
+    shape_filepath: $base0d
+    shape_globpattern: { fg: $base0d attr: b }
+    shape_variable: $base0e
+    shape_flag: { fg: $base0d attr: b }
+    shape_custom: { attr: b }
+}
 # =============================================================================== #
 # General config File:                                                            #
 # =============================================================================== #
@@ -41,8 +92,8 @@ $env.config = {
     header_on_separator: false
   }
   explore: {
-      status_bar_background: {fg: "#141b1e", bg: "#dadada"},
-      command_bar_text: {fg: "#dadada"},
+      status_bar_background: {fg: "#181616", bg: "#c5c9c5"},
+      command_bar_text: {fg: "#c5c9c5"},
       highlight: {fg: "black", bg: "yellow"},
       status: {
           error: {fg: "white", bg: "red"},
@@ -50,7 +101,7 @@ $env.config = {
           info: {}
       },
       table: {
-          split_line: {fg: "#232a2d"},
+          split_line: {fg: "#0d0c0c"},
           selected_cell: {bg: light_blue},
           selected_row: {},
           selected_column: {},
@@ -86,9 +137,9 @@ $env.config = {
       col_padding: 2
     }
     style: {
-      text: { fg: "#b3b9b8" }
-      selected_text: { fg: "#141b1e" bg: "#8ccf7e" attr: b}
-      description_text: { fg: "#e5c76b" }
+      text: { fg: "#a6a69c" }
+      selected_text: { fg: "#181616" bg: "#87a987" attr: b}
+      description_text: { fg: "#e6c384" }
       match_text: { attr: b }
       selected_match_text: { attr: br }
     }
@@ -176,7 +227,8 @@ let zoxide_completer = {|spans|
     $spans | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}
 }
 # =============================================================================== #
-# END OF FILE:                                                                    #
+# Source OF Files:                                                                #
 # =============================================================================== #
 source ~/.cache/carapace/init.nu
 source ~/.cache/zoxide.nu
+source alias.nu

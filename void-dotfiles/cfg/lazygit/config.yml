@@ -4,40 +4,54 @@
 gui:
   scrollHeight: 2
   mainPanelSplitMode: "flexible"
-  enlargedSideViewLocation: "left"
+  enlargedSideViewLocation: "top"
+  statusPanelView: allBranchesLog
+  useHunkModeInStagingView: true
   language: "en"
-  nerdFontsVersion: "3"
+  nerdFontsVersion: 3
   theme:
     activeBorderColor:
-      - "#8ccf7e"
+      - "#8a9a7b"
       - bold
     inactiveBorderColor:
-      - "#6cbfbf"
+      - "#8ba4b0"
     searchingActiveBorderColor:
       - "#c4b28a"
       - bold
     optionsTextColor:
-      - "#67b0e8"
+      - "#8ea4a2"
     selectedLineBgColor:
-      - "#232a2d"
+      - "#201d1d"
     selectedRangeBgColor:
-      - "#8ccf7e"
+      - "#8a9a7b"
     cherryPickedCommitBgColor:
-      - "#e5c76b"
+      - "#c4b28a"
     cherryPickedCommitFgColor:
-      - "#8ccf7e"
+      - "#8a9a7b"
     unstagedChangesColor:
-      - "#e57474"
+      - "#c4746e"
     defaultFgColor:
       - default
   commitLength:
     show: true
 
+os:
+  edit: "nvim {{filename}}"
+  editAtLine: "nvim +{{line}} {{filename}}"
+  editAtLineAndWait: "nvim --remote-wait +{{line}} {{filename}}"
+  editInTerminal: true
+
 git:
   paging:
     colorArg: "always"
-    pager: "delta --dark --paging=never"
+    pager: "delta --dark --paging=never --side-by-side"
   commit:
     signoff: false
     autoWrapCommitMessage: true
     autoWrapWidth: 72
+  allBranchesLogCmds:
+    - git log --color=always --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset" --abbrev-commit --date=relative
+
+keybinding:
+  universal:
+    quit: "q"

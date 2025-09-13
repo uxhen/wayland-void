@@ -25,7 +25,7 @@ return {
       showDocumentation = { enable = true },
     },
   },
-  -- Format a Document On Save:=======================================================
+  -- Format a Document On Save.
   on_attach = function(client, bufnr)
     vim.api.nvim_buf_create_user_command(0, 'LspEslintFixAll', function()
       client:request_sync('workspace/executeCommand', {

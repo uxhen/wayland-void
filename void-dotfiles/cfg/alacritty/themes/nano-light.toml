@@ -1,0 +1,27 @@
+# Nano light theme
+[colors.bright]
+black = "#9fadb4"
+blue = "#9fadb4"
+cyan = "#673ab7"
+green = "#608c88"
+magenta = "#000000"
+red = "#e0b153"
+white = "#9fadb4"
+yellow = "#f09276"
+
+[colors.cursor]
+cursor = "#385372"
+
+[colors.normal]
+black = "#ffffff"
+blue = "#bec8cc"
+cyan = "#673ab7"
+green = "#608c88"
+magenta = "#000000"
+red = "#e0b153"
+white = "#9fadb4"
+yellow = "#f09276"
+
+[colors.primary]
+background = "#ffffff"
+foreground = "#404553"

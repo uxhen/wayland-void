@@ -58,7 +58,7 @@ reveal = [
 	{ run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
 ]
 open = [
-	{ run = 'start chromium "%*"', desc = "Open" },
+	{ run = 'start qutebrowser "%*"', desc = "Open" },
 	{ run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
 
 ]

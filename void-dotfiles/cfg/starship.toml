@@ -26,19 +26,19 @@ $time\
 [ ](fg:color_bg1)\
 $line_break$character"""
 
-palette = 'everblush'
+palette = 'macro'
 command_timeout = 3600000
-[palettes.everblush]
-color_fg0 = '#141b1e'
-color_bg1 = '#232a2d'
-color_bg3 = '#e5c76b'
-color_blue = '#8ccf7e'
-color_aqua = '#8ccf7e'
-color_green = '#c47fd5'
-color_orange = '#e57474'
+[palettes.macro]
+color_fg0 = '#181616'
+color_bg1 = '#201d1d'
+color_bg3 = '#c4b28a'
+color_blue = '#8a9a7b'
+color_aqua = '#8a9a7b'
+color_green = '#a292a3'
+color_orange = '#c4746e'
 color_purple = '#6cbfbf'
-color_red = '#e57474'
-color_yellow = '#e5c76b'
+color_red = '#c4746e'
+color_yellow = '#c4b28a'
 
 [os]
 disabled = false
@@ -61,11 +61,19 @@ truncation_length = 3
 truncation_symbol = "…/"
 
 [directory.substitutions]
+"~" = " "
+"Desktop" = "󰇄 "
 "Documents" = "󰈙 "
 "Downloads" = " "
 "Music" = "󰝚 "
 "Pictures" = " "
-"Developer" = "󰲋 "
+"Projects" = "󰲋 "
+".config" = " "
+"main-vault" = "󱉽 "
+"Library/Mobile Documents/com~apple~CloudDocs" = "󰀸 "
+"phd-data-analysis" = " "
+"writing-vault" = " "
+".password-store" = " "
 
 [battery]
 format = '[[ $symbol$percentage ](fg:color_fg0 bg:color_bg3)]($style)'
