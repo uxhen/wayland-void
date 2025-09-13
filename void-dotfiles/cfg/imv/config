@@ -2,13 +2,13 @@
 # IMV options:                                                                    #
 # =============================================================================== #
 [options]
-background = 141b1e
+background = 0d0c0c
 width = 1400
 height = 800
-overlay_font = JetBrainsMono Nerd Font:9
-overlay_text_color = ebdbb2
+overlay_font = JetBrainsMono Nerd Font:10
+overlay_text_color = c5c9c5
 overlay_text_alpha = e6
-overlay_background_color = 141b1e
+overlay_background_color = 0d0c0c
 overlay_background_alpha = 90
 overlay_position_bottom = true
 scaling_mode = full

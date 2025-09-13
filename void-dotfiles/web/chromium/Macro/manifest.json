@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Macro Chrome Theme",
+  "description": "A Dark, Vibrant and Beautiful Colorscheme for Chrome - Macro",
+  "version": "3.0",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "author": "Farah Aka Uxhen",
+  "theme": {
+    "colors": {
+      "frame": [24, 22, 22],
+      "frame_inactive": [24, 22, 22],
+      "frame_incognito": [32, 29, 29],
+      "frame_incognito_inactive": [32, 29, 29],
+      "bookmark_text": [140, 151, 125],
+      "tab_background_text": [140, 151, 125],
+      "tab_background_text_inactive": [179, 185, 184],
+      "tab_background_text_incognito": [140, 151, 125],
+      "tab_background_text_incognito_inactive": [179, 185, 184],
+      "tab_text": [232, 227, 227],
+      "toolbar": [32, 29, 29],
+      "toolbar_button_icon": [140, 151, 125],
+      "omnibox_text": [140, 151, 125],
+      "omnibox_background": [32, 29, 29],
+      "ntp_background": [32, 29, 29],
+      "ntp_link": [103, 176, 232],
+      "ntp_text": [179, 185, 184],
+      "button_background": [24, 22, 22]
+    },
+    "images": {
+      "theme_toolbar": "images/theme_toolbar.png"
+    },
+    "tints": {
+      "buttons": [0.5, 0.5, 0.5]
+    }
+  }
+}
