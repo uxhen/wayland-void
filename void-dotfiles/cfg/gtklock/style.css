@@ -1,33 +1,33 @@
 /* # =============================================================================== # */
 /* # Gtk Lock Style:                                                                 # */
 /* # =============================================================================== # */
-@define-color color0 #141b1e;
+@define-color color0 #0d0c0c;
 @define-color color1 #e57474;
-@define-color color2 #8ccf7e;
-@define-color color3 #8ccf7e;
-@define-color color4 #61dcea;
-@define-color color5 #c47fd5;
-@define-color color6 #61dcea;
-@define-color color7 #dadada;
-@define-color bg #141b1e;
-@define-color bg-alt #232a2d;
-@define-color fg #8C977D;
+@define-color color2 #87a987;
+@define-color color3 #87a987;
+@define-color color4 #658594;
+@define-color color5 #a292a3;
+@define-color color6 #658594;
+@define-color color7 #c5c9c5;
+@define-color bg #0d0c0c;
+@define-color bg-alt #181616;
+@define-color fg #8a9a7b;
 * {
   all: unset;
 }
 window {
   background-image:
-    linear-gradient(rgba(20, 27, 30, 0.8), rgba(20, 27, 30, 0.8)),
-    url("/home/lli/Pictures/pix/wallpapers/VOID-WITHOUT-TEXT.png");
+    linear-gradient(rgba(13, 12, 12, 0.6), rgba(13, 12, 12, 0.6)),
+    url("/home/lli/Pictures/pix/wallpapers/EYES.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 #window-box {
-  background-color: alpha(@bg, 1);
+  background-color: alpha(@bg-alt, 1);
   border: 1px solid @color3;
-  padding: 0 8em;
-  margin-right: 30em;
+  padding: 0 36em;
+  margin-top: 50em;
 }
 #clock-label {
   min-width: 320px;

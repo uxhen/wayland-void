@@ -9,11 +9,11 @@ mkfifo "$FIFO"
 # -tags 9 " " " " " " " " " " " " " " " " " " \
 pkill sandbar; while cat "$FIFO"; do :; done | sandbar \
 	-no-layout -hide-normal-mode \
-	-active-fg-color "#141b1e" \
-	-active-bg-color "#8ccf7e" \
-	-inactive-fg-color "#dadada" \
-	-inactive-bg-color "#141b1e" \
-	-urgent-fg-color "#141b1e" \
-	-urgent-bg-color "#e57474" \
-	-title-fg-color "#141b1e" \
-	-title-bg-color "#8ccf7e"
+	-active-fg-color "#0d0c0c" \
+	-active-bg-color "#87a987" \
+	-inactive-fg-color "#c5c9c5" \
+	-inactive-bg-color "#0d0c0c" \
+	-urgent-fg-color "#0d0c0c" \
+	-urgent-bg-color "#c4746e" \
+	-title-fg-color "#0d0c0c" \
+	-title-bg-color "#87a987"
