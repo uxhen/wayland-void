@@ -1,36 +1,19 @@
-# ========================== EXAMPLE ========================== #
-    # # a comment - this is ignored
-    # *.a       # no .a files
-    # !lib.a    # but do track lib.a, even though you're ignoring .a files above
-    # /TODO     # only ignore the root TODO file, not subdir/TODO
-    # build/    # ignore all files in the build/ directory
-    # doc/*.txt # ignore doc/notes.txt, but not doc/server/arch.txt
-# ========================== END ============================== #
-
-# Auto Generate
-void-dotfiles/cfg/qutebrowser/autoconfig.yml
-void-dotfiles/cfg/qutebrowser/bookmarks/
+# EXAMPLE ========================================================================================
+# # a comment - this is ignored
+# *.a       # no .a files
+# !lib.a    # but do track lib.a, even though you're ignoring .a files above
+# /TODO     # only ignore the root TODO file, not subdir/TODO
+# build/    # ignore all files in the build/ directory
+# doc/*.txt # ignore doc/notes.txt, but not doc/server/arch.txt
+# END ============================================================================================
+# Auto Generate:                                                                                 #
+# ================================================================================================
 void-dotfiles/cfg/mpv/watch_later/
 void-dotfiles/cfg/mpv/volume
-void-dotfiles/cfg/cava/shaders/
-void-dotfiles/cfg/nnn/bookmarks/
-void-dotfiles/cfg/nnn/sessions/
-void-dotfiles/cfg/nnn/mounts/
-void-dotfiles/cfg/nnn/.selection
-void-dotfiles/music/.moc/cache/
-void-dotfiles/music/.moc/pid
-void-dotfiles/music/.moc/last_directory
-void-dotfiles/music/.moc/cache/tags.db
-void-dotfiles/music/.moc/cache/moc_version_tag
-void-dotfiles/music/.moc/equalizer
-void-dotfiles/music/.moc/softmixer
-void-dotfiles/music/.moc/playlist.m3u
-void-dotfiles/cfg/qutebrowser/qsettings/
 void-dotfiles/cfg/lazygit/state.yml
-void-dotfiles/cfg/bin/nvim/
 void-dotfiles/cfg/bin/neovide
-
-# Byte-compiled / optimized / DLL files
+# Byte-compiled / optimized / DLL files:                                                         #
+# ================================================================================================
 lazy-lock.json
 __pycache__/
 *.pyc
