@@ -19,7 +19,7 @@ sudo xbps-install -Sy \
     neovim lazygit fzf fd ripgrep zoxide pastel delta curl jq brightnessctl \
     # Graphical TOOLS:
     mpv imv zathura zathura-pdf-mupdf \
-    firefox qutebrowser nemo gimp shotcut \
+    chromium qutebrowser nemo gimp shotcut \
     # STORAGE TOOLS:
     udiskie simple-mtpfs WoeUSB-cli \
     gvfs gvfs-mtp gvfs-smb gvfs-afc gvfs-gphoto2 \
