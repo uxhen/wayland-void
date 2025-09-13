@@ -3,7 +3,7 @@
 # UI Settings:                                                                    #
 # =============================================================================== #
 ## Set GTK Themes, Icons, Cursor and Fonts
-THEME='Everblush-Extra'
+THEME='Macro'
 ICONS='Papirus-Dark'
 FONT='JetBrainsMono NF 9'
 CURSOR='Breeze_Hacked'
