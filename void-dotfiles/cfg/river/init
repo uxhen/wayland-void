@@ -242,7 +242,7 @@ riverctl map passthrough $mod F11 enter-mode normal
 # =============================================================================== #
 riverctl default-attach-mode top
 riverctl default-layout rivertile &
-rivertile -view-padding 1 -outer-padding 1 -main-ratio 0.6 &
+rivertile -view-padding 2 -outer-padding 2 -main-ratio 0.5 &
 # Layouts Binding:                                                                #
 # =============================================================================== #
 riverctl map -repeat normal $mod+Control H send-layout-cmd rivertile "main-ratio -0.05"
