@@ -2,14 +2,14 @@
 # Configuration file for GRUB:                                                    #
 # =============================================================================== #
 GRUB_DEFAULT=0
-#GRUB_HIDDEN_TIMEOUT=0
-#GRUB_HIDDEN_TIMEOUT_QUIET=false
 GRUB_TIMEOUT=0
 GRUB_DISTRIBUTOR="Void"
 GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=3 console=tty2"
-GRUB_BACKGROUND=/usr/share/void-artwork/splash.png
 GRUB_COLOR_NORMAL="light-blue/black"
 GRUB_COLOR_HIGHLIGHT="light-cyan/blue"
+#GRUB_HIDDEN_TIMEOUT=0
+#GRUB_HIDDEN_TIMEOUT_QUIET=false
+# GRUB_BACKGROUND=/usr/share/void-artwork/splash.png
 # Uncomment to use basic console
 #GRUB_TERMINAL_INPUT="console"
 # Uncomment to disable graphical terminal
