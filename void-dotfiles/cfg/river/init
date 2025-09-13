@@ -17,7 +17,7 @@ file_manager_cli="yazi"
 file_manager_gui="nemo"
 browser="qutebrowser"
 yt="freetube"
-menu="wmenu-run -N 141b1e -n dadada -S 8ccf7e -s 141b1e -M 8ccf7e -m 1d2021  -il '10' -p 'LAUNCH MENU:'"
+menu="wmenu-run -N 0d0c0c -n dadada -S 87a987 -s 0d0c0c -M 87a987 -m 181616  -il '10' -p 'LAUNCH MENU:'"
 touchpad="pointer-2-7-SynPS/2_Synaptics_TouchPad"
 
 # =============================================================================== #
