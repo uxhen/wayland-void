@@ -51,7 +51,7 @@ prepend_keymap = [
   { on   = [ "b", "m" ], run  = 'cd "~/Music"', desc = "Go To Videos Programming" },
   { on   = [ "b", "i" ], run  = 'cd "~/Pictures/pix"', desc = "Go To Pictures" },
   { on   = [ "b", "p" ], run  = 'cd "~/Projects"', desc = "Go To Projects" },
-  { on   = [ "b", "w" ], run  = 'cd "~/.local/wayland-void"', desc = "Go To Projects" }
+  { on   = [ "b", "w" ], run  = 'cd "~/.local/wayland-void"', desc = "Go To Projects" },
 	# QuickMarks: ==================================================================================
   { on   = [ "b", "u", "c" ], run  = 'cd "/mnt"', desc = "Go To Mount Point" },
   { on   = [ "b", "u", "d" ], run  = 'cd "/mnt"', desc = "Go To Mount Point" },
