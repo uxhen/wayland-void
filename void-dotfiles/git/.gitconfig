@@ -4,7 +4,7 @@
 [init]
 	defaultBranch                   = main
 [user]
-	name                            = u-shen
+	name                            = uxhen
 	email                           = farah.ushen@gmail.com
 [core]
 	editor                          = nvim

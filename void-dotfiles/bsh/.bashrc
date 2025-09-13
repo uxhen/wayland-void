@@ -21,8 +21,8 @@ export XCURSOR_THEME=Breez_Hacked
 export PROMPT_COMMAND='history -a'
 export HISTFILESIZE=5000
 export HISTCONTROL=ignoreboth:erasedups
-export TERMINAL="wt"
-export BROWSER="chromium"
+export TERMINAL="alacritty"
+export BROWSER="qutebrowser"
 export PAGER="less"
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -147,10 +147,10 @@ alias pc="doas xbps-remove -Oo"
 alias pclean="doas rm -rf /var/cache/xbps/*"
 # For Configs Files:                                                              #
 # =============================================================================== #
-alias sucks="cd ~/.local/wayland-void/void-dotfiles/cfg/wayland-suckless/"
 alias dots="cd ~/.local/wayland-void/"
 alias riverc="nvim ~/.config/river/init"
-alias swayc="nvim ~/.config/sway/config"
+alias wmc="nvim ~/.config/river/init"
+alias nuc="nvim ~/.config/nushell/config.nu"
 alias bashc="nvim ~/.bashrc"
 alias starc="nvim ~/.config/starship.toml"
 # Others Usfeual Alias:                                                           #
@@ -167,14 +167,17 @@ alias cls="clear"
 eval "$(fzf --bash)"
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_ALT_C_COMMAND="fd --type=d --no-hidden --strip-cwd-prefix --exclude .git"
-export FZF_DEFAULT_OPTS='
-       --style=minimal --height=30% --border --layout reverse --preview-window right,40%
-       --color fg:#b3b9b8,bg:#141b1e
-       --color bg+:#1e2527,fg+:#dadada
-       --color hl:#8ccf7e,hl+:#8ccf7e,gutter:#141b1e
-       --color pointer:#373d49,info:#606672
-       --color border:#141b1e
-       --color border:#8ccf7e'
+export FZF_DEFAULT_OPTS="
+    --prompt='󱓇  ' --layout=reverse
+    --preview-window=right,30%
+    --style=minimal --height=100% --border --preview-window right,40%
+    --color fg:#a6a69c,bg:#181616
+    --color bg+:#201d1d,fg+:#c5c9c5
+    --color hl:#8a9a7b,hl+:#8a9a7b,gutter:#181616
+    --color pointer:#201d1d,info:#393836
+    --color border:#181616
+    --color border:#8a9a7b
+    --bind 'tab:accept'"
 
 # =============================================================================== #
 # Tab Completions:                                                                #

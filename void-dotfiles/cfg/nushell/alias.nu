@@ -77,8 +77,11 @@ alias npx = pnpm dlx
 ## For Configs Files:                                                             #
 # =============================================================================== #
 alias dots = cd ~/.local/wayland-void
+alias riverc = nvim ~/.config/river/init
 alias wmc = nvim ~/.config/river/init
+alias nuc = nvim ~/.config/nushell/config.nu
 alias bashc = nvim ~/.bashrc
+alias starc = nvim ~/.config/starship.toml
 # Others Usfeual Alias:                                                           #
 # =============================================================================== #
 alias yt-concats = yt-dlp --no-warnings --quiet --progress --ignore-config --downloader aria2c --output "~/Videos/PROGRAMMING/%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" --format "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio" --concat-playlist always -S "codec:h264"
