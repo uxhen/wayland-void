@@ -27,12 +27,6 @@ require('mini.deps').setup({ path = { package = path_package } })
 local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 local now_if_args = vim.fn.argc(-1) > 0 and now or later
 --              ╭─────────────────────────────────────────────────────────╮
---              │                     Mini.SplitJoin                      │
---              ╰─────────────────────────────────────────────────────────╯
-later(function()
-  require('mini.splitjoin').setup()
-end)
---              ╭─────────────────────────────────────────────────────────╮
 --              │                     Mini.Git                            │
 --              ╰─────────────────────────────────────────────────────────╯
 later(function()
