@@ -3,6 +3,6 @@
 # Idle ScreenSaver:                                                               #
 # =============================================================================== #
 pkill swayidle; exec swayidle -w \
-	timeout 300 "gtklock" \
-	timeout 600 "wlr-randr --output eDP-1 --off" resume "wlr-randr --output eDP-1 --on" \
-	before-sleep "gtklock" &
+	timeout 300 'swaylock -f -c 000000' \
+	timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+	before-sleep 'swaylock -f -c 000000' &

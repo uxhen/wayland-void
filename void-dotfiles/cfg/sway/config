@@ -115,6 +115,24 @@ client.urgent           $urgent     $urgent     $light  $urgent      $urgent
 # =============================================================================== #
 # Rules:                                                                          #
 # =============================================================================== #
+# Floating:                                                                       #
+# =============================================================================== #
+# swaymsg -t get_tree | grep app_id
+for_window [app_id="termfloat"] {
+    floating enable
+    resize set height 800
+    resize set width 1200
+}
+for_window [app_id="mpv"] {
+    floating enable
+    resize set height 800
+    resize set width 1200
+}
+for_window [app_id="imv"] {
+    floating enable
+    resize set height 800
+    resize set width 1200
+}
 # Idle:                                                                           #
 # =============================================================================== #
 for_window {
