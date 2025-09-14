@@ -27,13 +27,13 @@ sudo xbps-install -Sy \
     NetworkManager network-manager-applet linux-wifi-hotspot \
     net-tools wireless_tools bind-utils iputils inetutils-telnet \
     # QT:
-    qt5ct qt6ct qt5-wayland qt6-wayland kvantum  \
+    qt5ct qt6ct qt5-wayland qt6-wayland kvantum \
     # SOUND:
     pipewire wireplumber alsa-pipewire alsa-utils pamixer pavucontrol \
     # BLUETOOTH:
     bluez bluez-alsa libspa-bluetooth blueman \
     # PROGRAMMING:
-    nodejs lua-language-server \
+    python3 python3-adblock nodejs lua-language-server \
     # FONTS:
     noto-fonts-ttf noto-fonts-ttf-extra noto-fonts-emoji noto-fonts-cjk \
     font-awesome dejavu-fonts-ttf \

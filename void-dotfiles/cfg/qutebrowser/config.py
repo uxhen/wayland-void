@@ -221,8 +221,8 @@ c.content.user_stylesheets = []
 c.content.blocking.enabled = True
 c.content.blocking.hosts.block_subdomains = True
 c.content.blocking.method = "both"
-c.content.blocking.hosts.lists = []
 c.content.blocking.whitelist = ['https://*.split.io/*']
+c.content.blocking.hosts.lists = ['https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts']
 c.content.blocking.adblock.lists = [
     "https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt",
     "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt",
