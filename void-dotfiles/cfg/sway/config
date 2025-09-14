@@ -227,13 +227,13 @@ bindsym {
 # Moving:                                                                         #
 # =============================================================================== #
 bindsym {
-    # Vim :                                                                       #
+    # Vim:                                                                        #
     # =========================================================================== #
     $mod+$left              focus left
     $mod+$down              focus down
     $mod+$up                focus up
     $mod+$right             focus right
-    # arrow :                                                                     #
+    # Arrow:                                                                      #
     # =========================================================================== #
     $mod+Left               focus left
     $mod+Down               focus down
