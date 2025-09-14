@@ -74,25 +74,25 @@ output eDP-1 {
 # =============================================================================== #
 # Misc:                                                                           #
 # =============================================================================== #
-    # Border:                                                                     #
-    # =========================================================================== #
-    default_border pixel 2
-    default_floating_border pixel 2
-    # Gaps:                                                                       #
-    # =========================================================================== #
-    gaps inner  2
-    gaps outer  0
-    # Smart:                                                                      #
-    # =========================================================================== #
-    smart_borders on
-    smart_gaps on
-    # Others:                                                                     #
-    # =========================================================================== #
-    xwayland enable
-    workspace_layout default
-    default_orientation horizontal
-    font pango: JetBrains Mono Nerd Font 10
-    floating_modifier $mod normal
+# Border:                                                                         #
+# =============================================================================== #
+default_border pixel 2
+default_floating_border pixel 2
+# Gaps:                                                                           #
+# =============================================================================== #
+gaps inner  2
+gaps outer  0
+# Smart:                                                                          #
+# =============================================================================== #
+smart_borders on
+smart_gaps on
+# Others:                                                                         #
+# =============================================================================== #
+xwayland enable
+workspace_layout default
+default_orientation horizontal
+font pango: JetBrains Mono Nerd Font 10
+floating_modifier $mod normal
 
 # =============================================================================== #
 # Colours:                                                                        #
@@ -112,6 +112,7 @@ client.focused            $focused    $focused    $dark   $focused    $focused
 client.focused_inactive   $inactive   $inactive   $light  $inactive   $inactive
 client.unfocused          $unfocused  $unfocused  $light  $unfocused  $unfocused
 client.urgent             $urgent     $urgent     $light  $urgent     $urgent
+
 # =============================================================================== #
 # Rules:                                                                          #
 # =============================================================================== #
@@ -304,9 +305,10 @@ bindsym {
     $mod+Ctrl+9             move container to workspace number 9,  workspace 9
     $mod+Ctrl+0             move container to workspace number 10, workspace 10
 }
-# =============================================================================== #
-# Status Bar:                                                                     #
-# =============================================================================== #
+
+# ============================================================================== #
+# Statusbar:                                                                     #
+# ============================================================================== #
 bar {
     position top
     font pango:JetBrains Mono Nerd Font 9
@@ -318,3 +320,8 @@ bar {
         inactive_workspace $inactive $inactive $light
     }
 }
+
+# ============================================================================== #
+# Screensharing :                                                                #
+# ============================================================================== #
+exec dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
