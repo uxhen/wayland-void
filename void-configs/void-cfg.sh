@@ -23,7 +23,7 @@ echo "In /etc: =================================================================
 sudo ln -sf ~/.local/wayland-void/void-dotfiles/etc/grub/grub /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-echo "HOME: ======================================================================================"
+echo "Home: ======================================================================================"
 LC_ALL=C.UTF-8 xdg-user-dirs-update --force 2> /dev/null
 mkdir -p ~/{Projects,Pictures,Desktop,Documents,Downloads,Music,Public,Videos}
 ln -sf ~/.local/wayland-void/void-dotfiles/pix ~/Pictures/
@@ -46,5 +46,5 @@ sudo mkdir -p /etc/alsa/conf.d
 sudo ln -s /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d
 sudo ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d
 
-echo "doas: ======================================================================================"
+echo "Doas: ======================================================================================"
 sudo bash -c "echo 'permit nopass lli as root' > /etc/doas.conf"
