@@ -107,11 +107,11 @@ set $unfocused  #201d1d
 set $urgent     #c4746e
 # Set:                                                                            #
 # =============================================================================== #
-# class                     border      bg      text    indicator   child_border
-client.focused          $focused    $focused    $dark   $focused    $focused
-client.focused_inactive $inactive   $inactive   $light  $inactive   $inactive
-client.unfocused        $unfocused  $unfocused  $light  $unfocused   $unfocused
-client.urgent           $urgent     $urgent     $light  $urgent      $urgent
+# class                   border      bg          text    indicator   child_border
+client.focused            $focused    $focused    $dark   $focused    $focused
+client.focused_inactive   $inactive   $inactive   $light  $inactive   $inactive
+client.unfocused          $unfocused  $unfocused  $light  $unfocused  $unfocused
+client.urgent             $urgent     $urgent     $light  $urgent     $urgent
 # =============================================================================== #
 # Rules:                                                                          #
 # =============================================================================== #
