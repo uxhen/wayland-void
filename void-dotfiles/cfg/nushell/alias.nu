@@ -78,7 +78,8 @@ alias npx = pnpm dlx
 # =============================================================================== #
 alias dots = cd ~/.local/wayland-void
 alias riverc = nvim ~/.config/river/init
-alias wmc = nvim ~/.config/river/init
+alias swayc = nvim ~/.config/sway/config
+alias wmc = nvim ~/.config/sway/config
 alias nuc = nvim ~/.config/nushell/config.nu
 alias bashc = nvim ~/.bashrc
 alias starc = nvim ~/.config/starship.toml
