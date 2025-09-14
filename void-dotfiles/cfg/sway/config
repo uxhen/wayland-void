@@ -130,10 +130,10 @@ for_window {
 bindsym {
     $mod+Return             exec $terminal_primary
     $mod+Backslash          exec $termbidi_secondary
-    $mod+Shift+w            exec $browser_secondary
     $mod+w                  exec $browser_primary
+    $mod+i                  exec $browser_secondary
     $mod+d                  exec $menu
-    $mod+n                  exec "$termbidi --class file_manager_cli $file_primary"
+    $mod+n                  exec "$terminal_primary -e $file_primary"
     $mod+shift+n            exec $file_secondry
     $mod+Shift+Backslash    exec "$termbidi --class termbidi_float"
     $mod+Shift+Return       exec "$terminal --app-id=foot_float"
