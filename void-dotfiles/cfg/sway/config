@@ -153,18 +153,15 @@ bindsym {
     $mod+d                  exec $menu
     $mod+n                  exec "$terminal_primary -e $file_primary"
     $mod+shift+n            exec $file_secondry
-    $mod+Shift+Backslash    exec "$termbidi --class termbidi_float"
-    $mod+Shift+Return       exec "$terminal --app-id=foot_float"
-    $mod+o                  exec "$HOME/.local/wayland-void/void-dotfiles/cfg/sway/scripts/onScreenKeyboard.sh"
-    $mod+shift+p            exec "$HOME/.local/wayland-void/void-dotfiles/cfg/sway/scripts/powerMenu.sh"
+    $mod+Shift+Return       exec "$terminal_primary --class termfloat_primary"
+    $mod+Shift+Backslash    exec "$termbidi_secondary --app_id=termfloat_secondary"
+    $mod+shift+o            exec "$HOME/.config/sway/scripts/onScreenKeyboard.sh"
+    $mod+shift+s            exec "$HOME/.config/sway/scripts/screenShoot.sh"
+    $mod+shift+p            exec "$HOME/.config/sway/scripts/powerMenu.sh"
+    $mod+shift+w            exec "$HOME/.config/sway/scripts/wifiMenu.py"
+    $mod+shift+m            exec "$HOME/.config/sway/scripts/mountMenu.sh"
 }
-# Screenshoot:                                                                    #
-# =============================================================================== #
-bindsym {
-    $mod+Print              exec "$HOME/.config/sway/scripts/screenShoot.sh"
-    $mod+Shift+Print        exec "$HOME/.local/wayland-void/void-dotfiles/cfg/sway/scripts/powerMenu.sh"
-}
-# MUSIC Bidings:                                                                  #
+# MUSIC:                                                                          #
 # =============================================================================== #
 bindsym {
     $mod4+p                 exec "mocp --toggle-pause"
