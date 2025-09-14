@@ -218,11 +218,11 @@ bindsym {
 # Others:                                                                         #
 # =============================================================================== #
 bindsym {
-    # comma(,,.):                                                                 #
+    # Next_And_Prev:                                                              #
     # =========================================================================== #
     $mod+period             workspace next
     $mod+comma              workspace prev
-    # slash(/):                #
+    # Back_And_Forth:                                                             #
     # =========================================================================== #
     $mod+slash              workspace back_and_forth
     $mod+tab                workspace back_and_forth
