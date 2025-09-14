@@ -108,8 +108,8 @@ set $urgent     #c4746e
 # Set:                                                                            #
 # =============================================================================== #
 # class                     border      bg      text    indicator   child_border
-client.focused          $focused    $focused    $light   $focused    $focused
-client.focused_inactive $inactive   $inactive   $light   $inactive   $inactive
+client.focused          $focused    $focused    $dark   $focused    $focused
+client.focused_inactive $inactive   $inactive   $light  $inactive   $inactive
 client.unfocused        $unfocused  $unfocused  $light  $unfocused   $unfocused
 client.urgent           $urgent     $urgent     $light  $urgent      $urgent
 # =============================================================================== #
@@ -294,11 +294,11 @@ bindsym {
 # =============================================================================== #
 bar {
     position top
-    font pango:JetBrains Mono Nerd Font 10
+    font pango:JetBrains Mono Nerd Font 9
     status_command ~/.config/sway/scripts/statusbar.sh
     colors {
         statusline #c5c9c5
         background #0d0c0c
-        inactive_workspace #323232 #323232 #5c5c5c
+        inactive_workspace #181616 #181616 #a09f95
     }
 }
