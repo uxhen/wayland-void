@@ -197,10 +197,11 @@ bindsym {
     $mod+q                  kill
     $mod+v                  splitv
     $mod+b                  splith
-    $mod+c                  split none
+    $mod+x                  split none
     $mod+e                  layout stacking
     $mod+t                  layout tabbed
-    $mod+s                  layout toggle split
+    $mod+c                  layout toggle split
+    $mod+s                  move left
     $mod+f                  fullscreen
     $mod+Shift+space        floating toggle
     $mod+space              focus mode_toggle
