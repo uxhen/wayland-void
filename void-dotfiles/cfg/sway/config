@@ -1,0 +1,304 @@
+# =============================================================================== #
+# First Edit 2023-03-31                                                           #
+# github.com/uxhen/wayland-void                                                   #
+# =============================================================================== #
+# =============================================================================== #
+# Variable:                                                                       #
+# =============================================================================== #
+set {
+    # Modifire:                                                                   #
+    # ============================================================================#
+    $mod Mod1
+    $mod4 Mod4
+    # Navigation:                                                                 #
+    # ============================================================================#
+    $left  h
+    $down  j
+    $up    k
+    $right l
+    # Apps:                                                                       #
+    # ============================================================================#
+    $terminal_primary alacritty
+    $termbidi_secondary foot
+    $browser_primary qutebrowser
+    $browser_secondary chromium
+    $editor_primary neovide
+    $editor_secondary zed
+    $file_primary yazi
+    $file_secondry nemo
+    $yt freetube
+    $menu wmenu-run -N 0d0c0c -n dadada -S 87a987 -s 0d0c0c -M 87a987 -m 181616  -il '10' -p 'LAUNCH MENU:'
+    $notification_dismiss makoctl dismiss --all
+}
+
+# =============================================================================== #
+# Autostart:                                                                      #
+# =============================================================================== #
+exec_always {
+    "$HOME/.config/sway/scripts/environment.sh"
+    "$HOME/.config/sway/scripts/autostart.sh"
+    "$HOME/.config/sway/scripts/gtkTheme.sh"
+    "$HOME/.config/sway/scripts/idle.sh"
+}
+
+# =============================================================================== #
+# Input:                                                                          #
+# =============================================================================== #
+input "type:touchpad" {
+    dwt enabled
+    tap enabled
+    middle_emulation enabled
+    natural_scroll enabled
+    accel_profile adaptive
+    pointer_accel 0.5
+}
+input "type:keyboard" {
+    xkb_layout us,ara
+    xkb_options caps:escape,grp:alts_toggle
+    repeat_delay 200
+    repeat_rate 80
+}
+seat seat0 {
+    hide_cursor when-typing enable
+    hide_cursor 5000
+}
+
+# =============================================================================== #
+# Output :                                                                        #
+# =============================================================================== #
+output eDP-1 {
+    mode 1920x1080@60.008Hz
+    background ~/Pictures/pix/wallpapers/EYES.png fill
+}
+
+# =============================================================================== #
+# Misc:                                                                           #
+# =============================================================================== #
+    # Border:                                                                     #
+    # =========================================================================== #
+    default_border pixel 2
+    default_floating_border pixel 2
+    # Gaps:                                                                       #
+    # =========================================================================== #
+    gaps inner  2
+    gaps outer  0
+    # Smart:                                                                      #
+    # =========================================================================== #
+    smart_borders on
+    smart_gaps on
+    # Others:                                                                     #
+    # =========================================================================== #
+    xwayland enable
+    workspace_layout default
+    default_orientation horizontal
+    font pango: JetBrains Mono Nerd Font 10
+    floating_modifier $mod normal
+
+# =============================================================================== #
+# Colours:                                                                        #
+# =============================================================================== #
+# Variable:                                                                       #
+# =============================================================================== #
+set $light      #c5c9c5
+set $dark       #0d0c0c
+set $focused    #87a987
+set $inactive   #201d1d
+set $unfocused  #201d1d
+set $urgent     #c4746e
+# Set:                                                                            #
+# =============================================================================== #
+# class                     border      bg      text    indicator   child_border
+client.focused          $focused    $focused    $light   $focused    $focused
+client.focused_inactive $inactive   $inactive   $light   $inactive   $inactive
+client.unfocused        $unfocused  $unfocused  $light  $unfocused   $unfocused
+client.urgent           $urgent     $urgent     $light  $urgent      $urgent
+# =============================================================================== #
+# Rules:                                                                          #
+# =============================================================================== #
+# Idle:                                                                           #
+# =============================================================================== #
+for_window {
+    [app_id=".*"]           inhabit_idle fullscreen
+    [class=".*"]            inhabit_idle fullscreen
+}
+
+# =============================================================================== #
+# Key Bindings:                                                                   #
+# =============================================================================== #
+# Programme:                                                                      #
+# =============================================================================== #
+bindsym {
+    $mod+Return             exec $terminal_primary
+    $mod+Backslash          exec $termbidi_secondary
+    $mod+Shift+w            exec $browser_secondary
+    $mod+w                  exec $browser_primary
+    $mod+d                  exec $menu
+    $mod+n                  exec "$termbidi --class file_manager_cli $file_primary"
+    $mod+shift+n            exec $file_secondry
+    $mod+Shift+Backslash    exec "$termbidi --class termbidi_float"
+    $mod+Shift+Return       exec "$terminal --app-id=foot_float"
+    $mod+o                  exec "$HOME/.local/wayland-void/void-dotfiles/cfg/sway/scripts/onScreenKeyboard.sh"
+    $mod+shift+p            exec "$HOME/.local/wayland-void/void-dotfiles/cfg/sway/scripts/powerMenu.sh"
+}
+# Screenshoot:                                                                    #
+# =============================================================================== #
+bindsym {
+    $mod+Print              exec "$HOME/.config/sway/scripts/screenShoot.sh"
+    $mod+Shift+Print        exec "$HOME/.local/wayland-void/void-dotfiles/cfg/sway/scripts/powerMenu.sh"
+}
+# MUSIC Bidings:                                                                  #
+# =============================================================================== #
+bindsym {
+    $mod4+p                 exec "mocp --toggle-pause"
+    $mod4+n                 exec "mocp --next"
+    $mod4+b                 exec "mocp --previous"
+    $mod4+q                 exec "mocp --exit"
+    $mod4+Left              exec "mocp --seek -10"
+    $mod4+Right             exec "mocp --seek +10"
+    $mod4+Period            exec "mocp --volume +10"
+    $mod4+Comma             exec "mocp --volume -10"
+}
+# Meltimedia:                                                                     #
+# =============================================================================== #
+bindsym {
+    # Audio:                                                                      #
+    # =========================================================================== #
+    XF86AudioRaiseVolume    exec wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+
+    XF86AudioLowerVolume    exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+    XF86AudioMute           exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+    XF86AudioMicMute        exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+    # brightness:                                                                 #
+    # =========================================================================== #
+    XF86MonBrightnessUp     exec brightnessctl set +5%
+    XF86MonBrightnessDown   exec brightnessctl set 5%-
+}
+# Window:                                                                         #
+# =============================================================================== #
+bindsym {
+    $mod+shift+q            exit
+    $mod+shift+r            reload
+    $mod+Shift+c            kill
+    $mod+q                  kill
+    $mod+v                  splitv
+    $mod+b                  splith
+    $mod+c                  split none
+    $mod+e                  layout stacking
+    $mod+t                  layout tabbed
+    $mod+s                  layout toggle split
+    $mod+f                  fullscreen
+    $mod+Shift+space        floating toggle
+    $mod+space              focus mode_toggle
+    $mod+a                  focus parent
+    $mod+Shift+a            focus child
+}
+# Scratchpads:                                                                    #
+# =============================================================================== #
+bindsym {
+    $mod+minus              move scratchpad
+    $mod+equal              scratchpad show
+}
+# Others:                                                                         #
+# =============================================================================== #
+bindsym {
+    # comma(,,.):                                                                 #
+    # =========================================================================== #
+    $mod+period             workspace next
+    $mod+comma              workspace prev
+    # slash(/):                #
+    # =========================================================================== #
+    $mod+slash              workspace back_and_forth
+    $mod+tab                workspace back_and_forth
+}
+# Moving:                                                                         #
+# =============================================================================== #
+bindsym {
+    # Vim :                                                                       #
+    # =========================================================================== #
+    $mod+$left              focus left
+    $mod+$down              focus down
+    $mod+$up                focus up
+    $mod+$right             focus right
+    # arrow :                                                                     #
+    # =========================================================================== #
+    $mod+Left               focus left
+    $mod+Down               focus down
+    $mod+Up                 focus up
+    $mod+Right              focus right
+    # Move:                                                                       #
+    # =========================================================================== #
+    $mod+Shift+$left        move left
+    $mod+Shift+$down        move down
+    $mod+Shift+$up          move up
+    $mod+Shift+$right       move right
+    # Ditto:                                                                      #
+    # =========================================================================== #
+    $mod+Shift+Left         move left
+    $mod+Shift+Down         move down
+    $mod+Shift+Up           move up
+    $mod+Shift+Right        move right
+}
+# Resizing:                                                                       #
+# =============================================================================== #
+bindsym {
+    $mod+Ctrl+h             resize shrink width  5 px or 5 ppt
+    $mod+Ctrl+j             resize grow   height 5 px or 5 ppt
+    $mod+Ctrl+k             resize shrink height 5 px or 5 ppt
+    $mod+Ctrl+l             resize grow   width  5 px or 5 ppt
+    $mod+Ctrl+Left          resize shrink width  5 px or 5 ppt
+    $mod+Ctrl+Up            resize grow   height 5 px or 5 ppt
+    $mod+Ctrl+Down          resize shrink height 5 px or 5 ppt
+    $mod+Ctrl+Right         resize grow   width  5 px or 5 ppt
+}
+# Workspaces:                                                                     #
+# =============================================================================== #
+bindsym {
+    # Switch:                                                                     #
+    # =========================================================================== #
+    $mod+1                  workspace number 1
+    $mod+2                  workspace number 2
+    $mod+3                  workspace number 3
+    $mod+4                  workspace number 4
+    $mod+5                  workspace number 5
+    $mod+6                  workspace number 6
+    $mod+7                  workspace number 7
+    $mod+8                  workspace number 8
+    $mod+9                  workspace number 9
+    $mod+0                  workspace number 10
+    # container:                                                                  #
+    # =========================================================================== #
+    $mod+Shift+1            move container to workspace number 1
+    $mod+Shift+2            move container to workspace number 2
+    $mod+Shift+3            move container to workspace number 3
+    $mod+Shift+4            move container to workspace number 4
+    $mod+Shift+5            move container to workspace number 5
+    $mod+Shift+6            move container to workspace number 6
+    $mod+Shift+7            move container to workspace number 7
+    $mod+Shift+8            move container to workspace number 8
+    $mod+Shift+9            move container to workspace number 9
+    $mod+Shift+0            move container to workspace number 10
+    # move:                                                                       #
+    # =========================================================================== #
+    $mod+Ctrl+1             move container to workspace number 1,  workspace 1
+    $mod+Ctrl+2             move container to workspace number 2,  workspace 2
+    $mod+Ctrl+3             move container to workspace number 3,  workspace 3
+    $mod+Ctrl+4             move container to workspace number 4,  workspace 4
+    $mod+Ctrl+5             move container to workspace number 5,  workspace 5
+    $mod+Ctrl+6             move container to workspace number 6,  workspace 6
+    $mod+Ctrl+7             move container to workspace number 7,  workspace 7
+    $mod+Ctrl+8             move container to workspace number 8,  workspace 8
+    $mod+Ctrl+9             move container to workspace number 9,  workspace 9
+    $mod+Ctrl+0             move container to workspace number 10, workspace 10
+}
+# =============================================================================== #
+# Status Bar:                                                                     #
+# =============================================================================== #
+bar {
+    position top
+    font pango:JetBrains Mono Nerd Font 10
+    status_command ~/.config/sway/scripts/statusbar.sh
+    colors {
+        statusline #c5c9c5
+        background #0d0c0c
+        inactive_workspace #323232 #323232 #5c5c5c
+    }
+}
