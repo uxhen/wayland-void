@@ -8,27 +8,27 @@
 set {
     # Modifire:                                                                   #
     # ============================================================================#
-    $mod Mod1
-    $mod4 Mod4
+    $mod                    Mod1
+    $mod4                   Mod4
     # Navigation:                                                                 #
     # ============================================================================#
-    $left  h
-    $down  j
-    $up    k
-    $right l
+    $left                   h
+    $down                   j
+    $up                     k
+    $right                  l
     # Apps:                                                                       #
     # ============================================================================#
-    $terminal_primary alacritty
-    $termbidi_secondary foot
-    $browser_primary qutebrowser
-    $browser_secondary chromium
-    $editor_primary neovide
-    $editor_secondary zed
-    $file_primary yazi
-    $file_secondry nemo
-    $yt freetube
-    $menu wmenu-run -N 0d0c0c -n dadada -S 87a987 -s 0d0c0c -M 87a987 -m 181616  -il '10' -p 'LAUNCH MENU:'
-    $notification_dismiss makoctl dismiss --all
+    $terminal_primary       alacritty
+    $termbidi_secondary     foot
+    $browser_primary        qutebrowser
+    $browser_secondary      chromium
+    $editor_primary         neovide
+    $editor_secondary       zed
+    $file_primary           yazi
+    $file_secondry          nemo
+    $yt                     freetube
+    $menu                   wmenu-run -N 0d0c0c -n dadada -S 87a987 -s 0d0c0c -M 87a987 -m 181616  -il '10' -p 'LAUNCH MENU:'
+    $notification_dismiss   makoctl dismiss --all
 }
 
 # =============================================================================== #
@@ -45,30 +45,30 @@ exec_always {
 # Input:                                                                          #
 # =============================================================================== #
 input "type:touchpad" {
-    dwt enabled
-    tap enabled
-    middle_emulation enabled
-    natural_scroll enabled
-    accel_profile adaptive
-    pointer_accel 0.1
+    dwt                     enabled
+    tap                     enabled
+    middle_emulation        enabled
+    natural_scroll          enabled
+    accel_profile           adaptive
+    pointer_accel           0.1
 }
 input "type:keyboard" {
-    xkb_layout us,ara
-    xkb_options caps:escape,grp:alts_toggle
-    repeat_delay 200
-    repeat_rate 80
+    xkb_layout              us,ara
+    xkb_options             caps:escape,grp:alts_toggle
+    repeat_delay            200
+    repeat_rate             80
 }
 seat seat0 {
-    hide_cursor when-typing enable
-    hide_cursor 5000
+    hide_cursor             when-typing enable
+    hide_cursor             5000
 }
 
 # =============================================================================== #
 # Output :                                                                        #
 # =============================================================================== #
 output eDP-1 {
-    mode 1920x1080@60.008Hz
-    background ~/Pictures/pix/wallpapers/EYES.png fill
+    mode                    1920x1080@60.008Hz
+    background              ~/Pictures/pix/wallpapers/EYES.png fill
 }
 
 # =============================================================================== #
@@ -76,42 +76,42 @@ output eDP-1 {
 # =============================================================================== #
 # Border:                                                                         #
 # =============================================================================== #
-default_border pixel 2
-default_floating_border pixel 2
+default_border              pixel 2
+default_floating_border     pixel 2
 # Gaps:                                                                           #
 # =============================================================================== #
-gaps inner  2
-gaps outer  0
+gaps inner                  2
+gaps outer                  0
 # Smart:                                                                          #
 # =============================================================================== #
-smart_borders on
-smart_gaps on
+smart_borders               on
+smart_gaps                  on
 # Others:                                                                         #
 # =============================================================================== #
 xwayland enable
-workspace_layout default
-default_orientation horizontal
-font pango: JetBrains Mono Nerd Font 10
-floating_modifier $mod normal
+workspace_layout            default
+default_orientation         horizontal
+font pango:                 JetBrains Mono Nerd Font 10
+floating_modifier           $mod normal
 
 # =============================================================================== #
 # Colours:                                                                        #
 # =============================================================================== #
 # Variable:                                                                       #
 # =============================================================================== #
-set $light      #c5c9c5
-set $dark       #0d0c0c
-set $focused    #87a987
-set $inactive   #201d1d
-set $unfocused  #201d1d
-set $urgent     #c4746e
+set $light                  #c5c9c5
+set $dark                   #0d0c0c
+set $focused                #87a987
+set $inactive               #201d1d
+set $unfocused              #201d1d
+set $urgent                 #c4746e
 # Set:                                                                            #
 # =============================================================================== #
-# class                   border      bg          text    indicator   child_border
-client.focused            $focused    $focused    $dark   $focused    $focused
-client.focused_inactive   $inactive   $inactive   $light  $inactive   $inactive
-client.unfocused          $unfocused  $unfocused  $light  $unfocused  $unfocused
-client.urgent             $urgent     $urgent     $light  $urgent     $urgent
+# class                     border      bg          text    indicator   child_border
+client.focused              $focused    $focused    $dark   $focused    $focused
+client.focused_inactive     $inactive   $inactive   $light  $inactive   $inactive
+client.unfocused            $unfocused  $unfocused  $light  $unfocused  $unfocused
+client.urgent               $urgent     $urgent     $light  $urgent     $urgent
 
 # =============================================================================== #
 # Rules:                                                                          #
@@ -120,19 +120,19 @@ client.urgent             $urgent     $urgent     $light  $urgent     $urgent
 # =============================================================================== #
 # swaymsg -t get_tree | grep app_id
 for_window [app_id="termfloat"] {
-    floating enable
-    resize set height 800
-    resize set width 1200
+    floating                enable
+    resize                  set height 800
+    resize                  set width 1200
 }
 for_window [app_id="mpv"] {
-    floating enable
-    resize set height 800
-    resize set width 1200
+    floating                enable
+    resize                  set height 800
+    resize                  set width 1200
 }
 for_window [app_id="imv"] {
-    floating enable
-    resize set height 800
-    resize set width 1200
+    floating                enable
+    resize                  set height 800
+    resize                  set width 1200
 }
 # Idle:                                                                           #
 # =============================================================================== #
@@ -311,14 +311,14 @@ bindsym {
 # Statusbar:                                                                     #
 # ============================================================================== #
 bar {
-    position top
-    font pango:JetBrains Mono Nerd Font 9
-    status_command ~/.config/sway/scripts/statusbar.sh
+    position                top
+    font pango:             JetBrains Mono Nerd Font 9
+    status_command          ~/.config/sway/scripts/statusbar.sh
     colors {
-        statusline $light
-        background $dark
-        focused_workspace $focused $focused $dark
-        inactive_workspace $inactive $inactive $light
+        statusline          $light
+        background          $dark
+        focused_workspace   $focused $focused $dark
+        inactive_workspace  $inactive $inactive $light
     }
 }
 
