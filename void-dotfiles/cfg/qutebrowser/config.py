@@ -961,4 +961,4 @@ c.colors.tabs.pinned.selected.odd.fg              = fg1
 c.colors.tooltip.bg                               = bg0_hard
 c.colors.tooltip.fg                               = fg1
 # Webpage =============================================================================
-c.colors.webpage.bg = 'white'
+c.colors.webpage.bg                               = 'white'
