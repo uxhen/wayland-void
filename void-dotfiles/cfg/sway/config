@@ -320,7 +320,7 @@ bar {
     mode                    dock
     position                top
     height                  20
-    workspace_min_width     25
+    workspace_min_width     20
     font pango:             JetBrains Mono Nerd Font 9
     status_command          ~/.config/sway/scripts/statusbar.sh
     colors {
