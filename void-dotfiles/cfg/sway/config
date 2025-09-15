@@ -34,13 +34,19 @@ set {
 # =============================================================================== #
 # Autostart:                                                                      #
 # =============================================================================== #
-exec_always {
+# Screensharing:                                                                  #
+# =============================================================================== #
+exec_always  {
+  dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+}
+# Scripts:                                                                       #
+# ============================================================================== #
+exec {
     "$HOME/.config/sway/scripts/environment.sh"
     "$HOME/.config/sway/scripts/autostart.sh"
     "$HOME/.config/sway/scripts/gtkTheme.sh"
     "$HOME/.config/sway/scripts/idle.sh"
 }
-
 # =============================================================================== #
 # Input:                                                                          #
 # =============================================================================== #
@@ -321,8 +327,3 @@ bar {
         inactive_workspace  $inactive $inactive $light
     }
 }
-
-# ============================================================================== #
-# Screensharing :                                                                #
-# ============================================================================== #
-exec dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
