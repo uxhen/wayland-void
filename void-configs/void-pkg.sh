@@ -10,7 +10,7 @@ sudo xbps-install -Sy \
     # SHELL:
     alacritty nushell carapace \
     # COMPOSITOR:
-    river sandbar gtklock swayidle mako wmenu wlr-randr wvkbd wbg \
+    sway swaylock swayidle mako wmenu wvkbd \
     # SCREENSHARING:
     grim slurp swappy obs xdg-desktop-portal-wlr \
     # CLI
