@@ -1,0 +1,61 @@
+# =============================================================================== #
+# Swaylock:                                                                       #
+# =============================================================================== #
+# General:                                                                        #
+# =============================================================================== #
+ignore-empty-password
+daemonize
+hide-keyboard-layout
+indicator-caps-lock
+# Image:                                                                          #
+# =============================================================================== #
+image=~/Pictures/pix/wallpapers/EYESLOCK.png
+# Fonts:                                                                          #
+# =============================================================================== #
+font=JetBrains Mono Nerd Font
+font-size=30
+# Caps:                                                                           #
+# =============================================================================== #
+bs-hl-color=#181616cc
+caps-lock-bs-hl-color=181616cc
+caps-lock-key-hl-color=d3869bcc
+# Indicator:                                                                      #
+# =============================================================================== #
+indicator-idle-visible
+indicator-radius=100
+indicator-thickness=200
+# Inside:                                                                         #
+# =============================================================================== #
+inside-color=201d1d10
+inside-clear-color=28272766
+inside-caps-lock-color=28272766
+inside-ver-color=28272766
+inside-wrong-color=28272766
+# Layout:                                                                         #
+# =============================================================================== #
+layout-bg-color=201d1d
+layout-text-color=201d1d
+# Ring:                                                                           #
+# =============================================================================== #
+ring-color=201d1dcc
+ring-clear-color=393836cc
+ring-caps-lock-color=e78a4ecc
+ring-ver-color=282727
+ring-wrong-color=d7474bcc
+# Text:                                                                           #
+# =============================================================================== #
+text-color=0d0c0c
+text-clear-color=00000000
+text-caps-lock-color=87a987
+text-ver-color=00000000
+text-wrong-color=00000000
+# Others:                                                                         #
+# =============================================================================== #
+key-hl-color=0d0c0ccc
+line-color=00000000
+separator-color=00000000
+# Effect:                                                                         #
+# =============================================================================== #
+effect-blur=10x5
+effect-greyscale
+effect-vignette=0.5:0.5
