@@ -54,8 +54,3 @@ text-wrong-color=00000000
 key-hl-color=0d0c0ccc
 line-color=00000000
 separator-color=00000000
-# Effect:                                                                         #
-# =============================================================================== #
-effect-blur=10x5
-effect-greyscale
-effect-vignette=0.5:0.5
