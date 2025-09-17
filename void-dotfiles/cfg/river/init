@@ -8,17 +8,17 @@
 # =============================================================================== #
 mod="Mod1"
 mod4="Mod4"
-terminal="alacritty"
-termbidi="foot"
-editor="neovide"
-editorGUI="zed"
-notification_dismiss="makoctl dismiss --all"
-file_manager_cli="yazi"
-file_manager_gui="nemo"
+terminal_primary="alacritty"
+termbidi_secondary="foot"
 browser_primary="qutebrowser"
 browser_secondary="chromium"
+editor_primary="neovide"
+editor_secondary="zed"
+file_primary="yazi"
+file_secondry="nemo"
 yt="freetube"
 menu="wmenu-run -N 0d0c0c -n dadada -S 87a987 -s 0d0c0c -M 87a987 -m 181616  -il '10' -p 'LAUNCH MENU:'"
+notification_dismiss="makoctl dismiss --all"
 touchpad="pointer-2-7-SynPS/2_Synaptics_TouchPad"
 
 # =============================================================================== #
@@ -49,7 +49,7 @@ riverctl input $touchpad pointer-accel 0.1
 # =============================================================================== #
 # Misc configurations:                                                            #
 # =============================================================================== #
-riverctl border-width 2
+riverctl border-width 1
 riverctl set-cursor-warp on-focus-change
 riverctl focus-follows-cursor always
 riverctl hide-cursor timeout 5000
@@ -122,20 +122,20 @@ riverctl rule-add -app-id "*" ssd
 # =============================================================================== #
 # Programme Bindings:                                                             #
 # =============================================================================== #
-riverctl map normal $mod Return spawn "$terminal"
-riverctl map normal $mod Backslash  spawn "$termbidi"
+riverctl map normal $mod Return spawn "$terminal_primary"
+riverctl map normal $mod Backslash spawn "$termbidi_secondary"
 riverctl map normal $mod W spawn "$browser_primary"
 riverctl map normal $mod I spawn "$browser_secondary"
 riverctl map normal $mod P spawn "$menu"
 riverctl map normal $mod D spawn "$menu"
-riverctl map normal $mod V spawn "$editor"
+riverctl map normal $mod V spawn "$editor_primary"
+riverctl map normal $mod Z spawn "$editor_secondary"
 riverctl map normal $mod Y spawn "$yt"
-riverctl map normal $mod Z spawn "$editorGUI"
-riverctl map normal $mod N spawn "$terminal -e $file_manager_cli"
-riverctl map normal $mod+Shift N spawn "$file_manager_gui"
+riverctl map normal $mod N spawn "$terminal -e $file_primary"
+riverctl map normal $mod+Shift N spawn "$file_secondry"
 riverctl map normal $mod+Shift D spawn "$notification_dismiss"
-riverctl map normal $mod+Shift Return spawn "$terminal --class alacritty_float"
-riverctl map normal $mod+Shift Backslash spawn "$termbidi start --class termbidi_float"
+riverctl map normal $mod+Shift Return spawn "$terminal --class termfloat"
+riverctl map normal $mod+Shift Backslash spawn "$termbidi start --class termfloat"
 riverctl map normal $mod+shift O spawn "$HOME/.local/wayland-void/void-dotfiles/cfg/river/scripts/onScreenKeyboard.sh"
 riverctl map normal $mod+Shift P spawn "$HOME/.local/wayland-void/void-dotfiles/cfg/river/scripts/powerMenu.sh"
 riverctl map normal $mod+Shift W spawn "$HOME/.local/wayland-void/void-dotfiles/cfg/river/scripts/wifiMenu.py"
