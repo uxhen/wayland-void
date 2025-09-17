@@ -98,4 +98,4 @@ Statusline.setup = function()
   vim.go.statusline = "%!v:lua.Statusline.build()"
 end
 
-Statusline.setup()
+return Statusline
