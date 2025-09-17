@@ -76,26 +76,21 @@ riverctl rule-add -title "wlroots*" fullscreen
 # Floating Rules:                                                                 #
 # =============================================================================== #
 riverctl rule-add -title "Virtual Machine*" float
-riverctl rule-add -app-id "alacritty_float" float
-riverctl rule-add -app-id "termbidi_float" float
-riverctl rule-add -app-id "man_page" float
-riverctl rule-add -app-id "file_manager_cli" float
+riverctl rule-add -app-id "termfloat" float
 riverctl rule-add -app-id "blueman-manager" float
 riverctl rule-add -app-id "blueman-sendto" float
 riverctl rule-add -app-id "wihotspot-gui" float
+riverctl rule-add -app-id "wihotspot" float
 riverctl rule-add -app-id "pavucontrol" float
-riverctl rule-add -app-id "vimiv" float
 riverctl rule-add -app-id "imv" float
 # Dimensions Rules:                                                               #
 # =============================================================================== #
 riverctl rule-add -title "Virtual Machine*" dimensions 600 400
-riverctl rule-add -app-id "alacritty_float" dimensions 1200 800
-riverctl rule-add -app-id "man_page" dimensions 900 1080
-riverctl rule-add -app-id "termbidi_float" dimensions 1200 800
-riverctl rule-add -app-id "file_manager_cli" dimensions 1200 800
+riverctl rule-add -app-id "termfloat" dimensions 1200 800
 riverctl rule-add -app-id "blueman-manager" dimensions 800 400
 riverctl rule-add -app-id "blueman-sendto" dimensions 1200 800
 riverctl rule-add -app-id "wihotspot-gui" dimensions 800 400
+riverctl rule-add -app-id "wihotspot" dimensions 800 400
 riverctl rule-add -app-id "pavucontrol" dimensions 800 400
 riverctl rule-add -app-id "mpv" dimensions 1500 800
 riverctl rule-add -app-id "vimiv" dimensions 1500 900
@@ -106,6 +101,7 @@ riverctl rule-add -app-id "man_page" position 1400 20
 riverctl rule-add -app-id "nm-applet" position 1400 20
 riverctl rule-add -app-id "blueman-manager" position 1400 20
 riverctl rule-add -app-id "wihotspot-gui" position 1400 20
+riverctl rule-add -app-id "wihotspot" position 1400 20
 riverctl rule-add -app-id "pavucontrol" position 1115 20
 # Tags Rules:                                                                     #
 # =============================================================================== #
@@ -131,10 +127,10 @@ riverctl map normal $mod D spawn "$menu"
 riverctl map normal $mod V spawn "$editor_primary"
 riverctl map normal $mod Z spawn "$editor_secondary"
 riverctl map normal $mod Y spawn "$yt"
-riverctl map normal $mod N spawn "$terminal -e $file_primary"
+riverctl map normal $mod N spawn "$terminal_primary -e $file_primary"
 riverctl map normal $mod+Shift N spawn "$file_secondry"
 riverctl map normal $mod+Shift D spawn "$notification_dismiss"
-riverctl map normal $mod+Shift Return spawn "$terminal --class termfloat"
+riverctl map normal $mod+Shift Return spawn "$terminal_primary --class termfloat"
 riverctl map normal $mod+Shift Backslash spawn "$termbidi start --class termfloat"
 riverctl map normal $mod+shift O spawn "$HOME/.local/wayland-void/void-dotfiles/cfg/river/scripts/onScreenKeyboard.sh"
 riverctl map normal $mod+Shift P spawn "$HOME/.local/wayland-void/void-dotfiles/cfg/river/scripts/powerMenu.sh"
@@ -147,16 +143,6 @@ riverctl map normal $mod+Shift R spawn "$HOME/.config/river/init"
 riverctl map normal $mod Print spawn "$HOME/.config/river/scripts/screenShoot.sh"
 riverctl map normal $mod+Shift Print spawn "$HOME/.config/river/scripts/screenRecored.sh"
 riverctl map normal $mod+Shift S spawn "$HOME/.config/river/scripts/screenShoot.sh"
-# MUSIC Bidings:                                                                  #
-# =============================================================================== #
-riverctl map normal $mod4 P spawn "mocp --toggle-pause"
-riverctl map normal $mod4 N spawn "mocp --next"
-riverctl map normal $mod4 B spawn "mocp --previous"
-riverctl map normal $mod4 Q spawn "mocp --exit"
-riverctl map -repeat normal $mod4 Left spawn "mocp --seek -10"
-riverctl map -repeat normal $mod4 Right spawn "mocp --seek +10"
-riverctl map -repeat normal $mod4 Period spawn "mocp --volume +10"
-riverctl map -repeat normal $mod4 Comma spawn "mocp --volume -10"
 # Window Bindings:                                                                #
 # =============================================================================== #
 riverctl map normal $mod+Control Q exit
@@ -244,7 +230,7 @@ riverctl map passthrough $mod F11 enter-mode normal
 # =============================================================================== #
 riverctl default-attach-mode top
 riverctl default-layout rivertile &
-rivertile -view-padding 2 -outer-padding 2 -main-ratio 0.5 &
+rivertile -view-padding 1 -outer-padding 1 -main-ratio 0.5 &
 # Layouts Binding:                                                                #
 # =============================================================================== #
 riverctl map -repeat normal $mod+Control H send-layout-cmd rivertile "main-ratio -0.05"

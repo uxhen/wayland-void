@@ -9,4 +9,4 @@ fi
 # =============================================================================== #
 # If running from tty Start Compositor:                                           #
 # =============================================================================== #
-[ "$(tty)" = "/dev/tty1" ] && exec dbus-run-session sway >/dev/null 2>&1
+[ "$(tty)" = "/dev/tty1" ] && exec dbus-run-session river >/dev/null 2>&1
